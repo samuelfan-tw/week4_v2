@@ -127,4 +127,14 @@ func testunittest() async{
         }
     }
 
+    func testWeatherService() async throws {
+        let weatherService = WeatherServiceImpl()
+
+        let temp = try await weatherService.getTemperature()
+        
+        // Then
+        XCTAssertNotNil(temp)
+        XCTAssert(temp == 84)
+    }
+
 }
