@@ -70,7 +70,7 @@ final class MyLibraryTests: XCTestCase {
     }
 
 func testunittest() async{
-
+ // Given
             let jasonString = """
              { 
                 "coord": {
@@ -116,9 +116,9 @@ func testunittest() async{
           "cod": 200
         }
         """
-
+ // When
         let data = Data(jasonString.utf8)
-
+// Then
         do {
             let jsonData = try JSONDecoder() .decode(Weather.self, from: data)
             XCTAssertEqual(jsonData.main.temp, 286.6)
@@ -128,8 +128,9 @@ func testunittest() async{
     }
 
     func testWeatherService() async throws {
+ // Given
         let weatherService = WeatherServiceImpl()
-
+ // When
         let temp = try await weatherService.getTemperature()
         
         // Then
