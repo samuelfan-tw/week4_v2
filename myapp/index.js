@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 app.get('/data/2.5/weather', (request, response) => {
-    response.json([
+    response.json(
        { "coord": {
             "lon": -123.2785,
             "lat": 44.5672
@@ -46,7 +46,7 @@ app.get('/data/2.5/weather', (request, response) => {
           "name": "Corvallis",
           "cod": 200
         }
-    ]);
+    );
   });
 
 app.listen(port, () => {
