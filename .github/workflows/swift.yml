@@ -10,28 +10,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  server:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.18]
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-       
-      - working-directory: ./myapp
-        run: npm ci
-      - working-directory: ./myapp
-        run: npm run build --if-present
-      - working-directory: ./myapp
-        run: npm install
-      - working-directory: ./myapp
-        run: node index.js &
+  
         
   build:
     name: Swift ${{ matrix.swift }} on ${{ matrix.os }}
@@ -44,10 +23,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: get dirction
-      run: pwd
-   
-   
+    - working-directory: ./myapp
+      run: npm ci
+    - working-directory: ./myapp
+      run: npm run build --if-present
+    - working-directory: ./myapp
+      run: npm install
+    - working-directory: ./myapp
+      run: node index.js &   
+      
     - name: Build
       working-directory: ./MyLibrary
       run: swift build -v
