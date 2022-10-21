@@ -11,7 +11,7 @@ enum BaseUrl : String {
             case localserver = "http://localhost:3000/data/2.5/weather"
 }
 class WeatherServiceImpl: WeatherService {
-    let url = "\(BaseUrl.realserver.rawValue)"
+    let url = "\(BaseUrl.localserver.rawValue)"
 
     func getTemperature() async throws -> Int {
         return try await withCheckedThrowingContinuation { continuation in
