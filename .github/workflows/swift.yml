@@ -20,6 +20,8 @@ jobs:
       run: pwd
     - name: go in to flie
       run: cd MyLibrary
+    - name: get dirction
+      run: pwd
     - name: Build
       run: swift build -v
     - name: Run tests
