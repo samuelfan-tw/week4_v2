@@ -31,7 +31,7 @@ jobs:
       - working-directory: ./myapp
         run: npm install
       - working-directory: ./myapp
-        run: node index.js
+        run: node index.js &
         
   build:
     name: Swift ${{ matrix.swift }} on ${{ matrix.os }}
