@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: go in to flie
+      run: cd MyLibrary
     - name: Build
       run: swift build -v
     - name: Run tests
