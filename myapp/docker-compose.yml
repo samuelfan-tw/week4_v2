@@ -1,0 +1,9 @@
+
+services:
+ 
+  dev:
+    image: "swiftlang/swift:nightly-focal"
+    volumes:
+      - /C/Users/samue/myapp:/code
+    environment:
+      - USER=samue
