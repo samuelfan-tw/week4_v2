@@ -29,9 +29,11 @@ jobs:
       run: npm run build --if-present
     - working-directory: ./myapp
       run: npm install
-    - working-directory: ./myapp
-      run: node index.js &   
-    - run: curl "http://localhost:3000/data/2.5/weather"
+    - name:turn on my mock server
+      working-directory: ./myapp
+      run: node index.js & 
+    - name: check my mock server work
+      run: curl "http://localhost:3000/data/2.5/weather"
     
     - name: Build
       working-directory: ./MyLibrary
