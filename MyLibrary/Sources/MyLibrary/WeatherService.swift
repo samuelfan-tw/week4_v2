@@ -6,7 +6,7 @@ public protocol WeatherService {
 
 enum BaseUrl : String {
 
-            case realserver = "https://api.openweathermap.org/data/2.5/weather?q=corvallis&units=imperial&appid=1b6fe56b923f4feee726f503f1d1c876"
+            case realserver = "https://api.openweathermap.org/data/2.5/weather?q=corvallis&units=imperial&appid=<API KEY>"
 
             case localserver = "http://localhost:3000/data/2.5/weather"
 }
